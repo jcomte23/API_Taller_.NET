@@ -1,7 +1,9 @@
-namespace Taller.Models;
+using System.ComponentModel.DataAnnotations;
 
+namespace Taller.Models;
 public class Propietario
 {
+    [Key]
     public int Id { get; set; }
     public required string Nombre { get; set; }
     public required string Apellido { get; set; }
