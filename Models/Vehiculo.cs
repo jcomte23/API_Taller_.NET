@@ -12,7 +12,7 @@ public class Vehiculo
     public required int Año { get; set; }
     public required string Color { get; set; }
     public required string TipoVehiculo { get; set; }
-
+    public required string NumeroChasis { get; set; }
 
     // Enlaces foraneos
     [ForeignKey("PropietarioId")]
