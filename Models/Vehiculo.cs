@@ -1,10 +1,6 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Taller.Models;
 public class Vehiculo
 {
-    [Key]
     public int Id { get; set; }
     public required string Marca { get; set; }
     public required string Modelo { get; set; }
@@ -15,6 +11,5 @@ public class Vehiculo
     public required string NumeroChasis { get; set; }
 
     // Enlaces foraneos
-    [ForeignKey("PropietarioId")]
     public Propietario? Propietario { get; set; }
 }
