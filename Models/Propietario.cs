@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Taller.Models;
 public class Propietario
@@ -26,4 +27,7 @@ public class Propietario
     [MinLength(5, ErrorMessage = "The Email field must be at least {1} characters.")]
     [MaxLength(255, ErrorMessage = "The Email field must be at most {1} characters.")]
     public required string Correo { get; set; }
+
+    [NotMapped]
+    public required string ColorDePelo { get; set; }
 }
