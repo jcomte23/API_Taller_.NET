@@ -38,6 +38,13 @@ public class PropietariosController : ControllerBase
         return Ok(PropietarioTraidoDeLaBaseDeDatos);
     }
 
+    [HttpGet("FindByInitial/{initial}")]
+    public async Task<IActionResult> GetOwnerByInitial(string initial)
+    {
+        var PropietarioTraidoDeLaBaseDeDatos = await ConexionConLaBaseDeDatos.Propietarios.Where(p => p.Nombre.StartsWith(initial)).ToListAsync();
+        return Ok(PropietarioTraidoDeLaBaseDeDatos);
+    }
+
 
 
 }

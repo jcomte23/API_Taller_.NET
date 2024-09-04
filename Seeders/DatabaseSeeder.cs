@@ -15,8 +15,7 @@ public class DatabaseSeeder
             .RuleFor(p => p.FotoPerfil, f => f.Image.PicsumUrl())  // URL de una imagen de perfil
             .RuleFor(p => p.Direccion, f => f.Address.FullAddress())
             .RuleFor(p => p.Telefono, f => f.Phone.PhoneNumber())
-            .RuleFor(p => p.Correo, f => f.Internet.Email())
-            .RuleFor(p => p.ColorDePelo, f => f.Commerce.Color());
+            .RuleFor(p => p.Correo, f => f.Internet.Email());
 
         return faker.Generate(cantidadDePropietario);
     }

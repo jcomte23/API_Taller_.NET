@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Taller.Models;
+using Taller.Seeders;
 
 namespace Taller.Data;
 public class ApplicationDbContext : DbContext
@@ -11,6 +12,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        var data = DatabaseSeeder.GenerarPropietariosFalsos(17500);
 
         modelBuilder.Entity<Propietario>(propietario =>
         {
@@ -24,6 +26,7 @@ public class ApplicationDbContext : DbContext
             propietario.Property(p => p.Telefono).HasMaxLength(25).IsRequired();
             propietario.Property(p => p.Direccion).HasMaxLength(255).IsRequired();
             propietario.Ignore(p => p.ColorDePelo);
+            propietario.HasData(data);
         });
 
         modelBuilder.Entity<Vehiculo>(vehiculo =>
